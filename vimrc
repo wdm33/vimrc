@@ -15,17 +15,29 @@ set scrolloff=8
 set colorcolumn=80
 set signcolumn=yes
 
+"My personal vim Mappings
+:map ss :w<enter>
+:map rr :!ghci % <enter>
+:map! jk ->
+:map! kj <-
+:map U <c-r>
+:map! ff <esc>
+:inoremap ( ()<Esc>i
+:inoremap [ []<Esc>i
+:inoremap ( ()<Esc>:let leavechar=")"<CR>i
+:inoremap [ []<Esc>:let leavechar="]"<CR>i
+:imap jj <Esc>:exec "normal f" . leavechar<CR>a
 
 
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
 
 "A Vim Plugin for Lively Previewing LaTeX PDF Output"
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 "Color theme plugin"
-Plug 'gruvbox-community/gruvbox'
+"Plug 'gruvbox-community/gruvbox'
 
-call plug#end()
+"call plug#end()
 
-colorscheme gruvbox
+"colorscheme gruvbox
 highlight Normal guibg=NONE
